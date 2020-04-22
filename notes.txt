@@ -1,0 +1,52 @@
+---------------------- DOCKERFILE ----------------------------
+-> FROM : >> l'image de depart (ex : debian)
+-> MAINTAINER : >> le nom du createur
+-> RUN : >> execute commande dans l'image lors de sa creation (ex : install paquets)
+-> WORKDIR : >> defini le repertoire de travail
+-> ENTRYPOINT : >> le script a executer lors du demarrage du docker
+-> COPY : >> copie des fichiers depuis l'hote vers le container
+		cree le nom du fichier et les repertoires demandes.
+		ex : on copie fichier test1 sur docker dans reperoire exemple avec comme nom test 2 :
+		COPY test1.txt /home/exemple/test2.txt
+-> CMD : >> execute commande dans le container
+
+-> CMD ["nginx", "-g", "daemon off;"]
+permet de passer au premier plan nginx. Le container ne va du coup plus directement
+exit : en effet, si tous les processus sont des daemons (en arriere plan), le container
+va exit car pas de process en premier plan donc rien de reellement actif
+
+--------------------- DOCKER CLIENT --------------------------
+-> $ docker ps 
+pour voir les containers actifs (-a pour voir tous les containers preceddement crees)
+
+-> $ docker run --name ft_server -p 80:80 (img tag)
+--name permet de nommer le container pour pouvoir utiliser ce nom ensuite
+run permet de creer un nouveau container (combine si je suis correct start + create)
+
+-> $ docker start (name)
+start un container qui a deja ete cree auparavant (donc il faut prealablement un create
+ou un run)
+
+-> $ docker stop (name)
+pour arreter un container qui tourne
+
+-> $ docker exec -it <container name> /bin/bash
+pour creer et lancer un bash tournant sur le container, et ainsi y acceder
+une fois que celui-ci a deja ete cree. sinon on peut lancer 
+-----> -it <nom_image> derriere docker run permet de directement lancer le bash
+
+-> $ docker container prune
+remove all stopped containers
+
+-> $ docker system prune
+The docker system prune command will remove all stopped containers, all dangling images,
+and all unused networks
+
+---------------------- NGINX ----------------------------
+-> service nginx status
+permet de voir si nginx tourne
+
+-> service nginx start
+-> service nginx stop
+Un service consiste en une application importante pour le systeme quit ourne en backgroudn
+ex : nginx, apache, mysql... On peut utiliser la commande service pour chacun d'eux
