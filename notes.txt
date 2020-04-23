@@ -16,6 +16,10 @@ exit : en effet, si tous les processus sont des daemons (en arriere plan), le co
 va exit car pas de process en premier plan donc rien de reellement actif
 
 --------------------- DOCKER CLIENT --------------------------
+build puis run :
+ ✗ docker build --tag ft_serv_img .
+ ✗ docker run --name ft_server -p 80:80 -p 443:443 ft_serv_img
+
 -> $ docker ps 
 pour voir les containers actifs (-a pour voir tous les containers preceddement crees)
 
@@ -50,3 +54,11 @@ permet de voir si nginx tourne
 -> service nginx stop
 Un service consiste en une application importante pour le systeme quit ourne en backgroudn
 ex : nginx, apache, mysql... On peut utiliser la commande service pour chacun d'eux
+
+---------------------- DATABASE -------------------------
+pour verifier si wordpress bien connecte a bdd aller dans phpmyadmin et regarder les tables
+on verra apparaitre les tables wp
+
+--------------------- INDEX -----------------------------
+Pour activer desactiver l'index auto, mettre autoindex on/off dans nginx.conf
+et supprimer/remettre index.html dans la liste des indexs

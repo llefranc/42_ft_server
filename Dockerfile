@@ -14,7 +14,8 @@ RUN mkdir /usr/share/nginx/html/wordpress
 RUN tar xzf latest.tar.gz --strip-components=1 -C /usr/share/nginx/html/wordpress
 
 # nginx configuration file
-COPY srcs/nginx.conf /etc/nginx/conf.d/nginx.conf 
+COPY srcs/ftserver.com /etc/nginx/sites-available/ftserver.com
+RUN ln -s /etc/nginx/sites-available/ftserver.com /etc/nginx/sites-enabled/
 # test file for php 7.3
 COPY srcs/info.php /usr/share/nginx/html/info.php
 # config file for phpmyadmin
@@ -38,6 +39,12 @@ RUN chmod 660 /usr/share/nginx/html/phpmyadmin/config.inc.php
 RUN chown -R www-data:www-data /usr/share/nginx/html/phpmyadmin
 RUN chmod 660 /usr/share/nginx/html/wordpress/wp-config.php
 RUN chown -R www-data:www-data /usr/share/nginx/html/wordpress
+
+# setting ssl parameters (creating certificate and key)
+# >> explanations for openssl cmd https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04
+RUN mkdir /etc/nginx/ssl
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt \
+	-subj "/C=FR/ST=ILE_DE_FRANCE/L=PARIS/O=ECOLE_42/OU=STUDENT/CN=FT_SERVER/emailAddress=test@xxx.fr"
 
 # script that will be launch when the container will be started
 ENTRYPOINT /home/docker/script/service_start.sh
