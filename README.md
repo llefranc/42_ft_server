@@ -32,7 +32,7 @@ each services running in localhost.
 2. `cd` into the root directory, and build the `Dockerfile`. Then run the docker image built.
 	You have to map port 80 and 443 from docker container to the localhost using `-p` option.
 
-        cd 42-03_ft_server
+        cd 42_ft_server
         Docker build -t ft_serv_img .
 		Docker run -p 80:80 -p 443:443 ft_serv_img
 
