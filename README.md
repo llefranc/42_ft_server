@@ -9,7 +9,7 @@
 Ft_server is a project of the mandatory part of the cursus.
 It's about using docker and setting up some services to run a website.
 We had to create our own Dockerfile on Debian, and setup the configuration for
-each services in localhost.
+each services running in localhost.
 
 - The different services are :
     - A web server (Nginx) that can be access in http / https
