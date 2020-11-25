@@ -2,7 +2,7 @@
 
 "This is a System Administration subject. You will discover Docker and you will set up your first web server"
 
-![Alt text](https://github.com/lucaslefrancq/42-03_ft_server/blob/master/ft_server_example.png)
+![Alt text](https://github.com/lucaslefrancq/42_ft_server/blob/master/ft_server_example.png)
 
 ## About
 
@@ -27,7 +27,7 @@ each services running in localhost.
 
 2. Download/Clone this repo
 
-        git clone https://github.com/lucaslefrancq/42-03_ft_server
+        git clone https://github.com/lucaslefrancq/42_ft_server.git
 
 2. `cd` into the root directory, and build the `Dockerfile`. Then run the docker image built.
 	You have to map port 80 and 443 from docker container to the localhost using `-p` option.
@@ -50,7 +50,7 @@ each services running in localhost.
 - [Dockerfile syntax][6]
 - [Comprendre le fonctionnement d'un serveur web (FR)][7]
 
-[1]: https://github.com/lucaslefrancq/42-03_ft_server/blob/master/ft_server.en.subject.pdf
+[1]: https://github.com/lucaslefrancq/42_ft_server/blob/master/ft_server.en.subject.pdf
 [2]: https://docs.docker.com/get-docker/
 [3]: https://www.youtube.com/watch?v=jPdIRX6q4jA&list=PLy7NrYWoggjzfAHlUusx2wuDwfCrmJYcs&ab_channel=TechWorldwithNana
 [4]: https://www.wanadev.fr/23-tuto-docker-comprendre-docker-partie1/
