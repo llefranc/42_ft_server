@@ -43,6 +43,18 @@ each services running in localhost.
 
 ## Sources
 
-- [Full tutorial for Docker and Kubernetes][4]
+- [Full tutorial for Docker][3]
+- [Tutoriel Docker (FR)][4]
+- [Un autre tutoriel Docker (FR)][8]
+- [Understanding how Wordpress works with Mysql][5]
+- [Dockerfile syntax][6]
+- [Comprendre le fonctionnement d'un serveur web (FR)][7]
 
 [1]: https://github.com/lucaslefrancq/42-03_ft_server/blob/master/ft_server.en.subject.pdf
+[2]: https://docs.docker.com/get-docker/
+[3]: https://www.youtube.com/watch?v=jPdIRX6q4jA&list=PLy7NrYWoggjzfAHlUusx2wuDwfCrmJYcs&ab_channel=TechWorldwithNana
+[4]: https://www.wanadev.fr/23-tuto-docker-comprendre-docker-partie1/
+[5]: https://premium.wpmudev.org/blog/mysql-databases/
+[6]: https://docs.docker.com/engine/reference/builder/
+[7]: https://www.youtube.com/watch?v=msB9AvJ4bTM&ab_channel=Cookieconnect%C3%A9
+[8]: https://devopssec.fr/article/differences-virtualisation-et-conteneurisation
