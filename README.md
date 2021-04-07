@@ -30,11 +30,11 @@ each services running in localhost.
         git clone https://github.com/lucaslefrancq/42_ft_server.git
 
 2. `cd` into the root directory, and build the `Dockerfile`. Then run the docker image built.
-	You have to map port 80 and 443 from docker container to the localhost using `-p` option.
+	You have to map port 80 and 443 from docker container to the localhost using `-p` option (i'm mapping them to the same port on localhost, but you can choose any ports according your preferences and which ports your computer is using).
 
         cd 42_ft_server
-        Docker build -t ft_serv_img .
-		Docker run -p 80:80 -p 443:443 ft_serv_img
+        docker build -t ft_serv_img .
+		docker run -p 80:80 -p 443:443 ft_serv_img
 
 3.  Access the different services with http:localhost/service with your browser, or use docker exec -ti
 	command to enter inside the docker container and see the different config files.
